@@ -7,6 +7,16 @@ pipeline {
     }
 
     stages {
+        stage('Debug Java') {
+            steps {
+                sh '''
+                    echo "JAVA_HOME=$JAVA_HOME"
+                    java -version
+                    mvn -version
+                '''
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git branch: 'dev',
