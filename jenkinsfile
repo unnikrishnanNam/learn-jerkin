@@ -17,6 +17,12 @@ pipeline {
             }
         }
 
+        stage('Docker Debug') {
+            steps {
+                sh 'docker version'
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git branch: 'dev',
